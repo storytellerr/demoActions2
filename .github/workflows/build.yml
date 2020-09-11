@@ -1,0 +1,17 @@
+name: Artifacts
+
+on: [push]
+
+jobs:
+  job_1:
+    name: Add 3 and 7
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          expr 3 + 7 > math-Calculations.txt
+      - name: Upload math result for job 1
+        uses: actions/upload-artifact@v2
+        with:
+          name: MathCalculationResult
+          path: math-Calculations.txt
