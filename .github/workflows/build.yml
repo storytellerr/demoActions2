@@ -6,4 +6,5 @@ jobs:
     name: Echo text
     runs-on: ubuntu-latest
     steps:
-      - echo "hello"
+      - id: step1
+        run: echo "Hello world"
